@@ -1,0 +1,518 @@
+body {
+    /* background: url(pic/pic_background.jpeg); */
+    /* background-color: rgb(255,0, 51, 0.5) ; */
+    /* background: content-box radial-gradient(#9E5A63, #C96567); */
+    background-color: #BFC0C0;
+    background-position: center;
+    /* background-color: rgb(186, 211, 211, 0.4); */
+    /* filter: blur(1px); */
+    background-size: cover;
+    /* background-color: rgb(232, 230, 230); */
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    position: relative;
+}
+
+header {
+    background-color:#2D3142;
+    /* background: linear-gradient(90deg, rgb(158, 158, 158) 38%, rgb(146, 177, 226) 67%); */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* opacity: .2; */
+    font-size: clamp(5px, 1.5vw, 20px);
+    height: 10vw;
+    /* border-bottom: 1px solid black; */
+    position: fixed;
+    top: 1;
+    left: 1;
+    right: 1;
+    z-index: 90;
+    
+
+}
+
+.logo {
+    width: 50%;
+}
+
+.picc {
+    background: url(pic/pic_background.jpeg);
+    width: 95vw;
+    height: 30vw;
+    /* border-radius: 10px; */
+    background-position: center;
+    padding-top: 35px;
+    margin: 15vw 0 25px 0;
+    /* background-color: rgb(186, 211, 211, 0.4); */
+    /* filter: blur(1px); */
+    background-size: cover;
+    /* background-color: rgb(232, 230, 230); */
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Unbounded', cursive;
+    position: relative;
+}
+
+.header-center {
+    display: flex;
+    justify-content: space-around;
+    width: 55%;
+    padding-right: 6vw;
+}
+
+.headerMenu:hover {
+    text-decoration: underline;
+    transition: .15s ease-in-out;
+    color: #ffbda1;
+    color: #EF8354;
+}
+
+.headerMenu{
+    color: #EF8354;
+    color: #fcaf8e;
+    text-decoration: none;
+}
+
+.header-right {
+    padding-right: 3vw;
+    color: #CCCCCC;
+    cursor: default;
+}
+
+.header-right p:hover{
+    text-decoration: underline;
+    transition: .15s ease-in-out;
+    color: #f1f1f1;
+}
+
+
+.busket {
+    
+    position: fixed;
+    background-color: rgba(65, 69, 99, 0.765);
+    color: #EF8354;
+    /* background-color: #EF8354; */
+    /* font-size: clamp(8px, 1.5vw, 20px); */
+    min-width: 20vw;
+    border: 1px solid gray;
+    border-radius: 10px;
+    top: 11vw;
+    right: 1vw;
+    padding: 10px;
+}
+
+.busket h3 {
+    font-size: clamp(8px, 1.5vw, 12px);
+    margin: 5px;
+}
+
+.BusketlementText {
+    font-size: clamp(8px, 1.5vw, 12px);
+    margin: 0;
+    padding-right: 10px;
+}
+
+.orderSumResult {
+    text-align: right;
+}
+
+.busketElement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2vw;
+    width: 25vw;
+    max-width: 250px;
+    margin: 5px;
+}
+
+.deleteFromBusket {
+    width: 10px;
+    min-width: 10px;
+    height: 10px;
+    background-color: rgb(171, 75, 75);
+    clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+}
+
+.orderSumResult {
+    font-size: clamp(8px, 1.5vw, 12px);
+}
+/* селектор выбора марки и модели автомобиля */
+
+.selector{
+    display: flex;
+    justify-content: center;
+    width: 65vw;
+    margin-top: 10px;
+    /* background-color: rgb(152, 152, 152, 0.3); */
+    background-color: #3A3F55;
+    border: 1px solid gray;
+    
+    padding: 15px 0 15px 0;
+    border-radius: 10px;
+}
+
+.auto-selection {
+    /* background-color: rgba(255, 255, 255, 0.2); */
+    width: 50vw;
+    text-align: center;
+    font-size: clamp(10px, 2vw, 20px);
+
+    /* color: rgb(200, 200, 200); */
+    /* color: #4F5D75; */
+    color: #EF8354;
+    color: #fcaf8e;
+    /* text-shadow: 1px 0 1px #000; */
+    padding: 0 15px 15px 15px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Automakers {
+    background-color: rgb(211, 211, 211, 0.2);
+    /* color: rgb(234, 234, 234, 0.9);
+     */
+     /* color: rgb(84, 84, 84); */
+     /* color: rgb(200, 200, 200); */
+     /* color: #4F5D75; */
+     color: #EF8354;
+     color: #fcaf8e;
+    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Unbounded', cursive; */
+    font-size: clamp(10px, 2vw, 20px);
+    text-align: center;
+    width: 50vw;
+    border: 1px solid black;
+    margin-top: 0.3vw;
+    height: 4vw;
+    /* text-shadow: 1px 0 1px #000; */
+}
+
+.Automodels {
+    display: none;
+    background-color: rgb(211, 211, 211, 0.2);
+    /* color: rgb(234, 234, 234, 0.9); */
+    /* color: rgb(84, 84, 84); */
+    /* color: rgb(200, 200, 200); */
+    /* color: #4F5D75; */
+    color: #EF8354;
+    color: #fcaf8e;
+    font-family: 'Raleway', sans-serif;
+    /* font-family: 'Unbounded', cursive; */
+    font-size: clamp(10px, 2vw, 20px);
+    text-align: center;
+    width: 50vw;
+    border: 1px solid black;
+    margin-top: 0.3vw;
+    height: 4vw;
+    /* text-shadow: 1px 0 1px #000; */
+}
+
+.view-result {
+    background-color: rgb(211, 211, 211, 0.2);
+    /* color: rgb(234, 234, 234, 0.9); */
+    /* color: rgb(84, 84, 84); */
+    /* color: rgb(200, 200, 200); */
+    color: #4F5D75;
+    color: #EF8354;
+    color: #fcaf8e;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Unbounded', cursive;
+    font-size: clamp(10px, 2vw, 20px);
+    text-align: center;
+    width: 50vw;
+    margin-top: 0.3vw;
+    border: 1px solid black;
+    height: 4vw;
+    /* text-shadow: 1px 0 1px #000; */
+    transition: .15s ease-in-out;
+}
+
+.view-result:hover{
+    background-color: rgba(172, 172, 172, 0.2);
+    color: #EF8354;
+    
+}
+.view-result:active{
+    background-color: rgba(172, 172, 172, 0.1);
+    color: #EF8354;
+}
+
+/* Каталог услуг */
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    font-size: clamp(10px, 2vw, 20px);
+    color: rgb(84, 84, 84);
+}
+
+.serviceType {
+    border: 1px solid gray;
+    border-radius: 10px;
+    margin: 30px 0 10px 0;
+    text-align: center;
+    width: 80vw;
+    background-color: #4F5D75;
+    color: #CCCCCC;
+    
+}
+
+.ServicesTypeList {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.serviceType h2{
+    text-align: center;
+    width: 80vw;
+}
+
+.viewServicesList{
+    width: 100%;
+    margin: 0 0 10px 0;
+}
+
+.ServiceBlock {
+    margin: 10px 25px 10px 25px;
+    padding: 10px 25px 10px 25px;
+    /* background-color: rgb(117, 125, 125, 0.1); */
+    border: 1px solid #CCCCCC;
+    border-radius: 10px;
+    max-width: 30vw;
+}
+
+.ServiceBlock h3{
+    font-size: clamp(12px, 2vw, 25px);
+}
+
+
+
+
+.btnAddDlt {
+    text-decoration: none;
+    display: inline-block;
+    padding: 1vw 1.5vw;
+    margin: 1vw 1.5vw;
+    font-size: 1.5vw;
+
+    border: 0 solid gray;
+    border-radius: 10px;
+    
+   
+    background-color: #D6D6D6;;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(90, 90, 90);
+    transition: .15s ease-in-out;
+}
+
+.btnAddDlt:hover {
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
+/* Описание и Слайдер примера работ */
+
+.descriptionCompany {
+    width: 80vw;
+    margin-top: 20px;
+    background-color: #248787;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #3A3F55;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.descriptionUs{
+    width: 35vw;
+    text-align: center;
+    font-size: clamp(12px, 2vw, 20px);
+    color: #EF8354;
+    color: #fcaf8e;
+}
+
+.descriptionCompany h2{
+    color: #EF8354;
+}
+
+
+.photo {
+    margin-top: 0px;
+    padding: 20px;
+    padding-top: 0;
+
+    text-align: center;
+
+    /* background-color: rgb(211, 211, 211, 0.1); */
+}
+
+.photo h2{
+   
+    color: #EF8354;
+}
+
+.photo button{
+    width: 9vw;
+    min-width: 50px;
+    min-height: 20px;
+    /* margin: 0 10px 0 10px; */
+    background-color: rgb(211, 211, 211, 0.2);
+    border: 0;
+    color: #EF8354;
+    font-family: 'Raleway', sans-serif;
+    font-size: clamp(10px, 2vw, 20px);
+    text-decoration: none;
+    display: inline-block;
+    padding: 1vw 1.5vw;
+    margin: 1vw 1.5vw;
+    
+
+    border: 0 solid gray;
+    border-radius: 10px;
+    
+   
+    background-color: #D6D6D6;;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(90, 90, 90);
+    transition: .15s ease-in-out;
+}
+
+.photo button:hover {
+    background-color: rgba(211, 211, 211, 0.5);
+}
+
+.photo-slider {
+    width: 250px;
+    height: 330px;
+    /* border: 2px solid black; */
+    overflow: hidden;
+    display: flex;
+    margin: 20px auto;
+    
+   
+}
+
+.photo-slider-2{
+    width: 1000px;
+    height: 330px;
+    background: orange;
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: all ease 1s;
+} 
+
+
+.map {
+    width: 80vw;
+    text-align: center;
+    margin: 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.mapView {
+    position:relative;
+    height:35vw; 
+    width:80vw; 
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+footer {
+    
+    height: 10vw;
+    background-color: #4F5D75;
+    color: #CCCCCC;
+   
+    display: flex;
+    justify-content: center;
+}
+
+footer p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* .moreOfTheServices1, .moreOfTheServices2, .moreOfTheServices3,.moreOfTheServices4, .moreOfTheServices5, .moreOfTheServices6 {
+      display: none;
+      cursor: default
+} */
+
+
+/* .viewDescription1, .viewDescription2, .viewDescription3, .viewDescription4, .viewDescription5, .viewDescription6{
+    cursor: default
+} */
+
+
+
+/* 
+
+
+.Services-catalog {
+  
+    color: rgb(63, 63, 63);
+    background-color: rgba(186, 186, 186, 0.4);
+    background-color: rgb(52, 50, 50, 0.8);
+    border-radius: 10px;
+    
+    font-size: clamp(10px, 2vw, 20px);
+
+   
+    width: 95vw;
+    margin-top: 35px;
+    
+   
+   
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.services-block{
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 0.5vw;
+    margin: 30px 5px 30px 5px;
+    text-align: center;
+    border-radius: 10px;
+    width: 45vw;
+    min-width: 200px;
+}
+.addToRequest {
+    text-decoration: none;
+    display: inline-block;
+    padding: 1vw 1.5vw;
+    margin: 1vw 1.5vw;
+    font-size: 1.5vw;
+
+    border: 1px solid black;
+    
+   
+    background-color: rgb(211, 211, 211, 0.3);
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    color: rgb(203, 201, 201);
+    transition: .15s ease-in-out;
+  }
+  .addToRequest:hover {
+    background-color: rgba(211, 211, 211, 0.5);
+  } */

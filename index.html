@@ -45,7 +45,7 @@
         <div class="selector"> 
             <div class="auto-selection">
                  <h3> Выберите марку и модель Вашего автомобиля: </h3>
-                    <select onchange="with (this) searchModels()" class="Automakers">
+                    <select onchange="with (this) viewhModels()" class="Automakers">
                         <option> Выберите марку </option>
                     </select>
                     <select onchange="with (this) searchClass()"class="Automodels">
@@ -88,10 +88,19 @@
         <div class="map">
             <iframe class="mapView" src="https://yandex.ru/map-widget/v1/-/CCUvYWr89C" frameborder="1" allowfullscreen="true"></iframe>
         </div>
-        <div class="busket" style="display: none;"> 
-            <h3>Вы выбрали:</h3> 
-            <div class="busketList"> </div>
-            <p class="orderSumResult"> Итого: 0 ₽</p>
+        <div class="overlayBasket" style="display: none">
+            <div class="busket" style="display: block" > 
+                <h3>Вы выбрали:</h3> 
+                <div class="busketList"> </div>
+                <p class="orderSumResult"> Итого: 0 ₽</p>
+                <div class="getUserData"> 
+                    <h5> Для оформления заявки укажите имя и номер телефона </h5>
+                    <input class="userName" value='' placeholder="Name"> 
+                    <input class="userPhone" value='' placeholder="89001234567"> 
+                    <button class="btnOrderDesign" onclick="orderDesign()">Отправить заявку!</button>
+                </div>
+            
+            </div>
         </div>
     </div>
     <footer>

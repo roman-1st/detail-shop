@@ -13,7 +13,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Raleway:wght@300&display=swap" rel="stylesheet">
 
 </head>
-
     <!-- <img src="pic/pic_background.JPG"> -->
     <header>
         <div class="logo">
@@ -26,52 +25,43 @@
             <p class="header-text"> <a class="headerMenu" href="#2"> Контакты </a></p>
             <p><a class="headerMenu" href="tel:+79818378300"> Позвонить </a> </p>
         </div>
-
         <div class="header-right">
             <p class="personalAccount"> Личный кабинет </p>
             <p class="servicesBasket" onclick="viewServicesBusket()"> Корзина (0)</p>
         </div>
-    
     </header>
-    
-
-
     <div class="main"> 
-        
-        <div class="picc">
-
+        <div class="pic-main"> </div>
+        <div class="descriptionUs">
+            <h2>О нас </h2>
+            <p> Мы используем раскходные материалы исключительно самого высокого
+                качества, а все сотрудникики без исключения - специалисты с подтвержденной
+                квалификацией. Именно поэтому мы всегда оправдываем высочайшие
+                ожидания наших клиентов! Мы придерживаемся строго установленного
+                порядка выполнения всех услуг, что способствует четкости в выполнении
+                взятых на себя обязательств.
+            </p>
         </div>
-        
         <div class="selector"> 
             <div class="auto-selection">
                  <h3> Выберите марку и модель Вашего автомобиля: </h3>
                     <select onchange="with (this) viewhModels()" class="Automakers">
-                        <option> Выберите марку </option>
+                        <option class="PopularAutoModel"> Выберите марку </option>
                     </select>
-                    <select onchange="with (this) searchClass()"class="Automodels">
-                        <option> Выберите модель </option>
+                    <select style="display: none;" onchange="with (this) searchClass()"class="Automodels">
+                        <option class="PopularAutoModel"> Выберите модель </option>
                     </select>
 
                     <button onclick="viewPrices()" class="view-result"> Показать актуальные цены </button>
             </div>
         </div>  
-
-        <div id='BlockServicesList' class="BlockServicesList">
-        </div>
-
-        <div class="descriptionCompany">
-            <div class="descriptionUs">
-                <h2>О нас </h2>
-                <p> Мы используем раскходные материалы исключительно самого высокого
-                    качества, а все сотрудникики без исключения - специалисты с подтвержденной
-                    квалификацией. Именно поэтому мы всегда оправдываем высочайшие
-                    ожидания наших клиентов! Мы придерживаемся строго установленного
-                    порядка выполнения всех услуг, что способствует четкости в выполнении
-                    взятых на себя обязательств.
-                </p>
+        <div id='BlockServicesList' class="BlockServicesList"></div>
+        <div class="photoAndMap">
+            <h2> Пример работ </h2>
+            <div class="map">
+                <iframe class="mapView" src="https://yandex.ru/map-widget/v1/-/CCUvYWr89C" frameborder="1" allowfullscreen="true"></iframe>
             </div>
-            <div class="photo">
-                <h2> Пример работ </h2>
+            <div class="photoBlock">
                 <div class="photo-slider"> 
                     <div class="photo-slider-2"> 
                         <img src="pic/photo-one.jpg" width="250" height="330"> 
@@ -84,19 +74,15 @@
                 <button class="btn-slider-next">Вперед</button>
             </div>
         </div>
-        
-        <div class="map">
-            <iframe class="mapView" src="https://yandex.ru/map-widget/v1/-/CCUvYWr89C" frameborder="1" allowfullscreen="true"></iframe>
-        </div>
         <div class="overlayBasket" style="display: none">
             <div class="busket" style="display: block" > 
-                <h3>Вы выбрали:</h3> 
+                <h3 class="basketh3">Ни одной услуги не выбрано</h3> 
                 <div class="busketList"> </div>
                 <p class="orderSumResult"> Итого: 0 ₽</p>
                 <div class="getUserData"> 
                     <h5> Для оформления заявки укажите имя и номер телефона </h5>
-                    <input class="userName" value='' placeholder="Name"> 
-                    <input class="userPhone" value='' placeholder="89001234567"> 
+                    <input class="userName" value='' placeholder="Ваше имя"> 
+                    <input class="userPhone" value='' placeholder="Ваш номер телефона"> 
                     <button class="btnOrderDesign" onclick="orderDesign()">Отправить заявку!</button>
                 </div>
             

@@ -23,35 +23,20 @@ header {
     /* opacity: .2; */
     font-size: clamp(5px, 1.5vw, 20px);
     height: 10vw;
+    max-height: 130px;
     border-bottom: 1px solid rgb(77, 77, 77);
-    position: fixed;
+    /* position: fixed;
     top: 1;
     left: 1;
     right: 1;
-    z-index: 90;
+    z-index: 90; */
     
 
 }
 
 .logo {
-    width: 50%;
-}
-
-.picc {
-    background: url(pic/pic_background.jpeg);
-    width: 95vw;
-    height: 30vw;
-    /* border-radius: 10px; */
-    background-position: center;
-    padding-top: 35px;
-    margin: 15vw 0 25px 0;
-    /* background-color: rgb(186, 211, 211, 0.4); */
-    /* filter: blur(1px); */
-    background-size: cover;
-    /* background-color: rgb(232, 230, 230); */
-    font-family: 'Raleway', sans-serif;
-    font-family: 'Unbounded', cursive;
-    position: relative;
+    width: 40%;
+    margin-left: 2%;
 }
 
 .header-center {
@@ -207,18 +192,65 @@ header {
     background-color: rgba(211, 211, 211, 0.88);
 }
 
+/* основная часть сайта */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    font-size: clamp(10px, 2vw, 20px);
+    color: rgb(84, 84, 84);
+}
+
+/* картанка в блоке */
+.pic-main {
+    background: url(pic/pic_background.jpeg);
+    width: 95vw;
+    height: 30vw;
+    /* border-radius: 10px; */
+    background-position: center;
+
+    margin: 35px 0 35px 0;
+    /* background-color: rgb(186, 211, 211, 0.4); */
+    /* filter: blur(1px); */
+    background-size: cover;
+    /* background-color: rgb(232, 230, 230); */
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Unbounded', cursive;
+    position: relative;
+}
+
+/* описание компании  */
+.descriptionUs{
+    background-color: #4F5D75;
+    width: 80vw;
+    border-radius: 10px;
+    text-align: center;
+    font-size: clamp(12px, 2vw, 20px);
+    color: #fcaf8e;
+    color: #CCCCCC;
+}
+
+.descriptionUs h2 {
+    font: bolder;
+}
+
+.descriptionUs p {
+    padding: 0 50px;
+    margin-top: 0;
+    color: #CCCCCC;
+}
+
+
 
 /* селектор выбора марки и модели автомобиля */
-
 .selector{
     display: flex;
     justify-content: center;
     width: 65vw;
-    margin-top: 10px;
-
+    margin-top: 35px;
     background-color: #3A3F55;
     border: 1px solid gray;
-    
     padding: 15px 0 15px 0;
     border-radius: 10px;
 }
@@ -240,9 +272,9 @@ header {
     justify-content: center;
 }
 
-.Automakers {
+.Automakers, .Automodels {
     background-color: rgb(211, 211, 211, 0.2);
-     color: #EF8354;
+
      color: #fcaf8e;
     font-family: 'Raleway', sans-serif;
 
@@ -255,43 +287,21 @@ header {
 
 }
 
-.Automodels {
-    display: none;
-    background-color: rgb(211, 211, 211, 0.2);
-    /* color: rgb(234, 234, 234, 0.9); */
-    /* color: rgb(84, 84, 84); */
-    /* color: rgb(200, 200, 200); */
-    /* color: #4F5D75; */
-    color: #EF8354;
-    color: #fcaf8e;
-    font-family: 'Raleway', sans-serif;
-    /* font-family: 'Unbounded', cursive; */
-    font-size: clamp(10px, 2vw, 20px);
-    text-align: center;
-    width: 50vw;
-    border: 1px solid black;
-    margin-top: 0.3vw;
-    height: 4vw;
-    /* text-shadow: 1px 0 1px #000; */
+.auto-selection option {
+    background-color: #2D3142
 }
 
 .view-result {
     background-color: rgb(211, 211, 211, 0.2);
-    /* color: rgb(234, 234, 234, 0.9); */
-    /* color: rgb(84, 84, 84); */
-    /* color: rgb(200, 200, 200); */
-    color: #4F5D75;
-    color: #EF8354;
     color: #fcaf8e;
     font-family: 'Raleway', sans-serif;
-    font-family: 'Unbounded', cursive;
+    
     font-size: clamp(10px, 2vw, 20px);
     text-align: center;
     width: 50vw;
     margin-top: 0.3vw;
     border: 1px solid black;
     height: 4vw;
-    /* text-shadow: 1px 0 1px #000; */
     transition: .15s ease-in-out;
 }
 
@@ -307,24 +317,14 @@ header {
 
 /* Каталог услуг */
 
-.main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    font-size: clamp(10px, 2vw, 20px);
-    color: rgb(84, 84, 84);
-}
-
 .serviceType {
     border: 1px solid gray;
     border-radius: 10px;
-    margin: 30px 0 10px 0;
+    margin: 35px 0 0 0;
     text-align: center;
     width: 80vw;
     background-color: #4F5D75;
     color: #CCCCCC;
-    
 }
 
 .serviceType h2{
@@ -378,11 +378,12 @@ header {
     background-color: rgba(211, 211, 211, 0.5);
 }
 
-/* Описание и Слайдер примера работ */
+/* блок с картой и Слайдер примера работ */
 
-.descriptionCompany {
+.photoAndMap {
     width: 80vw;
-    margin-top: 20px;
+    margin-top: 35px;
+    padding-bottom: 20px;
     background-color: #248787;
     display: flex;
     flex-wrap: wrap;
@@ -392,36 +393,64 @@ header {
     border-radius: 10px;
 }
 
-.descriptionUs{
-    width: 35vw;
-    text-align: center;
-    font-size: clamp(12px, 2vw, 20px);
+.photoAndMap h2{
     color: #EF8354;
-    color: #fcaf8e;
-}
-
-.descriptionCompany h2{
-    color: #EF8354;
-}
-
-
-.photo {
-    margin-top: 0px;
-    padding: 20px;
-    padding-top: 0;
-
+    width: 100%;
     text-align: center;
-
-    /* background-color: rgb(211, 211, 211, 0.1); */
 }
 
-.photo h2{
+.map {
+    display: flex;
+    align-items: center;
    
-    color: #EF8354;
+    position:relative;
+    overflow:hidden;
 }
 
-.photo button{
-    width: 9vw;
+.mapView {
+    position:relative;
+    height:25vw; 
+    width:45vw; 
+    min-width: 25vw;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+
+.photoBlock {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-between;
+    max-width: 250px;
+    width: 40%;
+}
+
+.photo-slider {
+    max-width: 250px;
+    height:330px; 
+    border-radius: 10px;
+    /* border: 2px solid black; */
+    overflow: hidden;
+    display: flex;
+
+}
+
+.photo-slider-2{
+    width: 1000px;
+    height: 250px;
+    background: orange;
+    display: flex;
+    position: relative;
+    
+    left: 0;
+    transition: all ease 1s;
+} 
+
+
+
+.photoBlock button{
+    width: 5vw;
+    height: 2.5vw;
     min-width: 50px;
     min-height: 20px;
     /* margin: 0 10px 0 10px; */
@@ -429,11 +458,13 @@ header {
     border: 0;
     color: #EF8354;
     font-family: 'Raleway', sans-serif;
-    font-size: clamp(10px, 2vw, 20px);
+    font-size: clamp(10px, 2vw, 16px);
+    text-align: center;
     text-decoration: none;
     display: inline-block;
-    padding: 1vw 1.5vw;
-    margin: 1vw 1.5vw;
+    padding: 0.5vw;
+ 
+    margin-top: 0;
     
 
     border: 0 solid gray;
@@ -451,52 +482,16 @@ header {
     background-color: rgba(211, 211, 211, 0.5);
 }
 
-.photo-slider {
-    width: 250px;
-    height: 330px;
-    /* border: 2px solid black; */
-    overflow: hidden;
-    display: flex;
-    margin: 20px auto;
-    
-   
-}
 
-.photo-slider-2{
-    width: 1000px;
-    height: 330px;
-    background: orange;
-    display: flex;
-    position: relative;
-    left: 0;
-    transition: all ease 1s;
-} 
-
-
-/* блок с картой */
-.map {
-    width: 80vw;
-    text-align: center;
-    margin: 20px;
-    position:relative;
-    overflow:hidden;
-}
-
-.mapView {
-    position:relative;
-    height:35vw; 
-    width:80vw; 
-    border: 1px solid gray;
-    border-radius: 10px;
-}
 
 /* Футер */
 footer {
     
     height: 10vw;
+    max-height: 130px;
     background-color: #4F5D75;
     color: #CCCCCC;
-   
+    margin-top: 35px;
     display: flex;
     justify-content: center;
 }
@@ -505,6 +500,7 @@ footer p{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 

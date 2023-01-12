@@ -440,6 +440,7 @@ let BlockServicesList = document.querySelector('.BlockServicesList');
 let sliderline = document.querySelector('.photo-slider-2');
 let overlayBasket = document.querySelector('.overlayBasket')
 let busket = document.querySelector('.busket')
+
 let busketList = document.querySelector('.busketList')
 let orderSumResult = document.querySelector('.orderSumResult')
 let getUserData = document.querySelector('.getUserData')
@@ -475,7 +476,7 @@ let viewAutomaker = function () {
             let popularAuto = popularAutoList.map(item => item.name)
 
             for (let i = 0; i < popularAuto.length; i++) {
-                Auto.innerHTML += `<option class="elementPopularAuto"> ${popularAuto[i]} </option>`
+                Auto.innerHTML += `<option style="color: #CCCCCC;" class="elementPopularAuto"> ${popularAuto[i]} </option>`
             };
         });
 }
@@ -494,7 +495,7 @@ let viewhModels = function () {
     console.log(model);
 
     for (i = 0; i < model.length; i++) {
-        autoModels.innerHTML += `<option id="${[i]}" class="${model[i].name}-${model[i].class}"> ${model[i].name} </option>`
+        autoModels.innerHTML += `<option style="color: #CCCCCC;" id="${[i]}" class="${model[i].name}-${model[i].class}"> ${model[i].name} </option>`
     };
 }
 
@@ -623,18 +624,15 @@ function addToOrder(a, b) {
                     busketPosition.classList.add('busketPosition');
                     busketPosition.setAttribute('id', `busketPosition-${c.ServiceElements[key].id}`)
                     busketList.append(busketPosition)
+                   
+                    document.querySelector('.basketh3').innerHTML = `Позиций в корзине: ${orders.length}`
+                  
                     busketPosition.innerHTML =
-                        `
-                        <p class="BusketlementText"> ${c.ServiceElements[key].ServiceTitle} </p> 
+                        `<p class="BusketlementText"> ${c.ServiceElements[key].ServiceTitle} </p> 
                         <p class='deleteFromBusket' onclick="deleteFromOrder(${c.ServiceElements[key].id}, ${c.id})"></p> 
-                        
                         </div>`
                     orderSumResult.innerHTML =
-                        `<p> Итого: ${orderSum} ₽ </p> 
-                        `
-
-
-
+                        `<p> Итого: ${orderSum} ₽ </p> `
                     document.querySelector('.servicesBasket').innerHTML = `Корзина (${orders.length})`
                 }
             }
@@ -668,10 +666,9 @@ function deleteFromOrder(a, b) {
 
                     orders.splice(orderIndex, 1)
                     document.querySelector('.servicesBasket').innerHTML = `Корзина (${orders.length})`
-                    console.log(orderIndex);
-
-                    console.log(orders);
-                    console.log(orderSum);
+                    if (orders.length == 0) {
+                        document.querySelector('.basketh3').innerHTML = `Ни одной услуги не выбрано`
+                    } else  document.querySelector('.basketh3').innerHTML = `Позиций в корзине: ${orders.length}`
                 }
             }
         }

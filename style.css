@@ -92,7 +92,10 @@ header {
     position: fixed;
     
     background-color: rgba(65, 69, 99, 0.765);
+    /* background-color: #BFC0C0; */
     color: #EF8354;
+    color: #CCCCCC;
+    
 
     min-width: 40vw;
     /* border: 1px solid gray; */
@@ -155,7 +158,8 @@ header {
 }
 
 .getUserData h5{
-    margin: 0;
+    margin: 5px;
+    align-self: flex-start;
 }
 
 .userName, .userPhone{
@@ -184,8 +188,10 @@ header {
     transition: .15s ease-in-out;
     height: 2vw;
     min-height: 15px;
-    width: 35vw;
+    width: 15vw;
+    min-width: 50px;
     max-width: 200px;
+    align-self: flex-end;
 }
 
 .orderDesign:hover {
@@ -395,6 +401,8 @@ header {
 
 .photoAndMap h2{
     color: #EF8354;
+    color: #CCCCCC;
+    font: bolder;
     width: 100%;
     text-align: center;
 }

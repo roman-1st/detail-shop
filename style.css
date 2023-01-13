@@ -14,6 +14,9 @@ body {
 }
 
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
     background-color:#2D3142;
     /* background-color: #4F5D75; */
     /* background: linear-gradient(90deg, rgb(158, 158, 158) 38%, rgb(146, 177, 226) 67%); */
@@ -355,11 +358,12 @@ header {
     /* background-color: rgb(117, 125, 125, 0.1); */
     border: 1px solid #CCCCCC;
     border-radius: 10px;
-    max-width: 30vw;
+    width: 30vw;
 }
 
 .ServiceBlock h3{
     font-size: clamp(12px, 2vw, 25px);
+    height: 4vw;
 }
 
 .btnAddDlt {
@@ -368,7 +372,8 @@ header {
     padding: 1vw 1.5vw;
     margin: 1vw 1.5vw;
     font-size: 1.5vw;
-
+    /* font-size: clamp(12px, 1.5vw, 18px); */
+    font-size: clamp(8px, 2vw, 18px);
     border: 0 solid gray;
     border-radius: 10px;
     

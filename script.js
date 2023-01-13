@@ -468,7 +468,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // отображение автопроизводителей
 let viewAutomaker = function () {
-    fetch("/Json/cars_base_demo/base_auto.json")
+    fetch("/base_auto.json")
         .then(function (a) { return a.json() })
         .then(function (a) {
             popularAutoList = a.filter(item => item.popular == true)
@@ -707,7 +707,7 @@ function clearOrder() {
     viewServices(servicesBase[selectedСlass])
     document.querySelector('.userName').value = ''
     document.querySelector('.userPhone').value = ''
-
+    document.querySelector(".basketh3").innerHTML = "Ни одной услуги не выбрано"
     busketList.innerHTML = ''
     orderSum = 0
     orderSumResult.innerHTML = `Итого: ${orderSum}`
@@ -766,3 +766,10 @@ document.querySelector('.btn-slider-back').addEventListener('click', function ()
     }
     sliderline.style.left = -photoSize + 'px'
 });
+
+// действие с личным кабинетом
+
+function openLC() {
+    alert(`Личный кабинет находится в стадии разработки,
+приносим свои извинения за доставленные неудобства`)
+}

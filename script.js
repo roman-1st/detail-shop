@@ -429,10 +429,7 @@ const servicesBase = [
     ]
 ]
 
-let selectedСlass = 0 //значение класса по умолчанию
-
-
-
+//  заданные переменные для обращения к HTML 
 let Auto = document.querySelector('.Automakers');
 let autoModels = document.querySelector(".Automodels");
 let autoList = document.querySelector('.auto-selections');
@@ -445,10 +442,12 @@ let busketList = document.querySelector('.busketList')
 let orderSumResult = document.querySelector('.orderSumResult')
 let getUserData = document.querySelector('.getUserData')
 
-
 let choiseAuto = document.createElement('option');
 let ServiceCatalogElem = document.createElement('div')
 
+let selectedСlass = 0 //значение класса по умолчанию
+let base // переменная для хранения базы автопроизводителей
+let popularAutoList // хранение базы популярных автопроизводителей
 let user = {} // марка и модель авто пользователя, его имя и телефон
 let orders = [] // все выбранные услуги пользователем
 let finalOrder = [] // объединение автомобиля пользователя, его данных и выбранных услуг
@@ -458,28 +457,46 @@ let orderSum = 0 // сумма всех выбранных услуг (толь�
 selectedСlass = 0 // изначально заданный класс 
 let photoSize = 0; // для слайдера
 
-
+// запуск функций после загрузки страницы
 document.addEventListener("DOMContentLoaded", function () {
     viewAutomaker()
     viewServices(servicesBase[selectedСlass])
-})
+}, false)
 
+// получение с JSON файла всех автопроизводителей, фильтрация по популярности
+let viewAutomaker = function () {
+    let requestBaseURL = "https://raw.githubusercontent.com/roman-1st/detail-shop/main/base_auto.json"
+    let requestBase = new XMLHttpRequest();
+    requestBase.open ('GET', requestBaseURL )
+    requestBase.responseType = 'json'
+    requestBase.send()
+    requestBase.onload = function () {
+        base = requestBase.response
+        popularAutoList = base.filter(item => item.popular == true)
+        let popularAuto = popularAutoList.map(item => item.name)
 
+        for (let i = 0; i < popularAuto.length; i++) {
+            Auto.innerHTML += `<option style="color: #CCCCCC;" class="elementPopularAuto"> ${popularAuto[i]} </option>`
+        };
+
+};
+}
 
 // отображение автопроизводителей
-let viewAutomaker = function () {
-    fetch("/base_auto.json")
-        .then(function (a) { return a.json() })
-        .then(function (a) {
-            popularAutoList = a.filter(item => item.popular == true)
+// let viewAutomaker = function () {
+//     fetch("https://drive.google.com/file/d/1FmwXGvtn4qBDtcLC0gWd9bx_pEPHBln7/view?usp=share_link.json")
+    
+//         .then(function (a) { return a.json() })
+//         .then(function (a) {
+//             popularAutoList = a.filter(item => item.popular == true)
 
-            let popularAuto = popularAutoList.map(item => item.name)
+//             let popularAuto = popularAutoList.map(item => item.name)
 
-            for (let i = 0; i < popularAuto.length; i++) {
-                Auto.innerHTML += `<option style="color: #CCCCCC;" class="elementPopularAuto"> ${popularAuto[i]} </option>`
-            };
-        });
-}
+//             for (let i = 0; i < popularAuto.length; i++) {
+//                 Auto.innerHTML += `<option style="color: #CCCCCC;" class="elementPopularAuto"> ${popularAuto[i]} </option>`
+//             };
+//         });
+// }
 
 // отображение моделей выбранной марки автомобиля
 let viewhModels = function () {
@@ -559,13 +576,13 @@ function viewServices(a) {
                 ServicesTypeList.innerHTML +=
                     `<div  class="ServiceBlock" id=ServiceBlock-${b.ServiceElements[key].id}> 
                    <h3> ${b.ServiceElements[key].ServiceTitle}</h3> 
-                   <h3> стоимость: ${b.ServiceElements[key].price} ₽ </h3>
+                   <h2> стоимость: ${b.ServiceElements[key].price} ₽ </h2>
                     <p style="cursor: default" class="viewDescription${b.ServiceElements[key].id}" onclick="moreOf(${b.ServiceElements[key].id})"> 
                         Нажмите сюда, чтобы почитать описание услуги
                     </p>
-                    <p style="display: none" class="moreOfTheServices${b.ServiceElements[key].id}"> 
+                    <h4 style="display: none" class="moreOfTheServices${b.ServiceElements[key].id}"> 
                         ${b.ServiceElements[key].ServicesDescription} 
-                    </p>
+                    </h4>
                     <button class="btnAddDlt" id="add-${b.ServiceElements[key].id}" onclick="addToOrder(${b.ServiceElements[key].id}, ${b.id})"> 
                         Добавить
                     </button>   
@@ -575,13 +592,13 @@ function viewServices(a) {
                 ServicesTypeList.innerHTML +=
                     `<div class="ServiceBlock" id="ServiceBlock-${b.ServiceElements[key].id}"> 
                        <h3> ${b.ServiceElements[key].ServiceTitle}</h3> 
-                       <h3> ${b.ServiceElements[key].price} ₽ </h3>
+                       <h2> ${b.ServiceElements[key].price} ₽ </h2>
                         <p style="cursor: default" class="viewDescription${b.ServiceElements[key].id}" onclick="moreOf(${b.ServiceElements[key].id})"> 
                             Нажмите сюда, чтобы почитать описание услуги 
                         </p>
-                        <p style="display: none" class="moreOfTheServices${b.ServiceElements[key].id}"> 
+                        <h4 style="display: none" class="moreOfTheServices${b.ServiceElements[key].id}"> 
                             ${b.ServiceElements[key].ServicesDescription} 
-                        </p> 
+                        </h4> 
                     </div>`
             }
         }
@@ -605,9 +622,9 @@ function addToOrder(a, b) {
                         `<h3> ${c.ServiceElements[key].ServiceTitle} </h3> 
                         <h3> стоимость: ${c.ServiceElements[key].price} ₽ </h3>
                         
-                        <p class="viewDescription${c.ServiceElements[key].id}" onclick="moreOf(${c.ServiceElements[key].id})"> 
+                        <h4 class="viewDescription${c.ServiceElements[key].id}" onclick="moreOf(${c.ServiceElements[key].id})"> 
                             Нажмите сюда, чтобы почитать описание услуги 
-                        </p>
+                        </h4>
                         <p style="display: none" class="moreOfTheServices${c.ServiceElements[key].id}"> 
                             ${c.ServiceElements[key].ServicesDescription} 
                         </p> 
@@ -649,9 +666,9 @@ function deleteFromOrder(a, b) {
                     document.getElementById(`ServiceBlock-${a}`).innerHTML =
                         `<h3> ${orders[key].ServiceTitle} </h3>
                      <h3> стоимость: ${orders[key].price} ₽ </h3>
-                    <p class="viewDescription${orders[key].id}" onclick="moreOf(${orders[key].id})"> 
+                    <h4 class="viewDescription${orders[key].id}" onclick="moreOf(${orders[key].id})"> 
                         Нажмите сюда, чтобы почитать описание услуги 
-                    </p>
+                    </h4>
                     <p style="display: none"class="moreOfTheServices${orders[key].id}"> 
                         ${orders[key].ServicesDescription} 
                     </p> 
@@ -693,6 +710,7 @@ function orderDesign() {
         alert('Заявка на обратный звонок отправлена! Мы вам перезвоним в ближайшее время!')
         finalOrder.push(user, orders)
         dataBase.push(finalOrder)
+        
 
         console.log(dataBase);
 
@@ -704,6 +722,8 @@ function orderDesign() {
 function clearOrder() {
     orders = []
     finalOrder = []
+    user = {}
+    console.log(finalOrder);
     viewServices(servicesBase[selectedСlass])
     document.querySelector('.userName').value = ''
     document.querySelector('.userPhone').value = ''

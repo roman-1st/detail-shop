@@ -14,27 +14,17 @@ body {
 }
 
 header {
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    background-color:#2D3142;
-    /* background-color: #4F5D75; */
-    /* background: linear-gradient(90deg, rgb(158, 158, 158) 38%, rgb(146, 177, 226) 67%); */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* opacity: .2; */
-    font-size: clamp(5px, 1.5vw, 20px);
+    position: sticky;
+    top: 0;
+    z-index: 1;
     height: 10vw;
     max-height: 130px;
+    background-color:#2D3142;
+    font-size: clamp(8px, 2vw, 20px);
     border-bottom: 1px solid rgb(77, 77, 77);
-    /* position: fixed;
-    top: 1;
-    left: 1;
-    right: 1;
-    z-index: 90; */
-    
-
 }
 
 .logo {
@@ -49,18 +39,17 @@ header {
     padding-right: 6vw;
 }
 
+.headerMenu{
+    color: #CCCCCC;
+    text-decoration: none;
+}
+
 .headerMenu:hover {
     text-decoration: underline;
     transition: .15s ease-in-out;
     color: #ffbda1;
-    color: #EF8354;
 }
 
-.headerMenu{
-    color: #EF8354;
-    color: #fcaf8e;
-    text-decoration: none;
-}
 
 .header-right {
     padding-right: 3vw;
@@ -71,7 +60,7 @@ header {
 .header-right p:hover{
     text-decoration: underline;
     transition: .15s ease-in-out;
-    color: #f1f1f1;
+    color: #ffbda1;
 }
 
 /* корзина выбранных услуг */
@@ -311,7 +300,7 @@ header {
     margin-top: 0.3vw;
     border: 1px solid black;
     height: 4vw;
-    transition: .15s ease-in-out;
+    
 }
 
 .view-result:hover{
@@ -336,9 +325,15 @@ header {
     color: #CCCCCC;
 }
 
-.serviceType h2{
+/* .serviceType h2{
     text-align: center;
     width: 80vw;
+} */
+
+.serviceType p:hover {
+    color: #ffbda1;
+    transition: .15s ease-in-out;
+    text-decoration:underline
 }
 
 .ServicesTypeList {
@@ -363,7 +358,17 @@ header {
 
 .ServiceBlock h3{
     font-size: clamp(12px, 2vw, 25px);
+    height: auto;
+    max-height: 55px;
+    align-self: center;
+}
+
+.ServiceBlock h2{
+    font-size: clamp(12px, 2vw, 25px);
     height: 4vw;
+    max-height: 40px;
+    
+    align-self: center;
 }
 
 .btnAddDlt {
